@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初見Vue</title>
+    <!-- 引入 vue -->
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <!-- 
+
+                1.想讓Vue工作，就必須創建一個 Vue 實例，且要傳入一個配置物件；
+				2.root容器裡的代碼依然符合 html 規範，只不過混入了一些特殊的Vue語法；
+				3.root容器裡的代碼被稱為【Vue模板】；
+
+     -->
+     
+    <div id="root">
+        <h1>Hello , {{name}}</h1>
+    </div>
+
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false; //設置為 false 以阻止 vue 在啟動時生成生產提示。
+
+        //創建 Vue 實例
+        new Vue({
+            el:('#root'),   //用於指定當前Vue實例為哪個容器服務，值通常為 CSS 選擇器字串
+            data:{          //data 中用於儲存資料，資料提供 el 所指定的容器去使用，值先使用物件寫死
+                name:'胖胖'
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
